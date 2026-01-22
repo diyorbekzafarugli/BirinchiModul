@@ -52,8 +52,8 @@ internal class Program
         //    }
         //}
 
-        //Console.Write("1-sonni kiriting : ");
-        //int firstValue = int.Parse(Console.ReadLine());
+        Console.Write("1-sonni kiriting : ");
+        int firstValue = int.Parse(Console.ReadLine());
 
         //Console.Write("2-sonni kiriting : ");
         //int secondValue = int.Parse(Console.ReadLine());
@@ -74,11 +74,5 @@ internal class Program
         //        Console.Write($"{i}, ");
         //    }
         //}
-
-
-
-
-
-        //Console.WriteLine("Hello, World!");
     }
 }
