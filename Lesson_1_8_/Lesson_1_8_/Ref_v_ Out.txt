@@ -1,0 +1,154 @@
+
+
+--------- Ref vs Out ---------------
+
+
+namespace Lesson_1_8_;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        // // 10-masala:
+        //int a = 1;
+        //for (int i = 0; i < 10; i++)
+        //{
+        //    Console.WriteLine(a);
+        //    IncreseNumber(ref a);
+        //}
+
+
+        // // 9-masala:
+        //int num = 90;
+        //bool t;
+        //GetOddOrEven(out t, num);
+        //Console.WriteLine(t);
+
+        // // 8-masala:
+        //int balance = 56000;
+        //Console.Write("To'lov summasini kiriting : ");
+        //int summa = int.Parse(Console.ReadLine());
+
+        //PayFromBalance(ref balance, summa);
+        //Console.WriteLine(balance);
+
+
+        // // 7-masala:
+        //int a = 5;
+        //int b = 6;
+        //int summ;
+        //int mult;
+        //SummAndMultNumbers(out summ, out mult, a, b);
+        //Console.WriteLine(summ);
+        //Console.WriteLine(mult);
+
+        // // 6-masala:
+        //int num = -90;
+        //DoNegativeToPositive(ref num);
+        //Console.WriteLine(num);
+
+        // // 5-masala:
+        //int num = 4;
+        //DoEvenToNull(ref num);
+        //Console.WriteLine(num);
+
+        // // ref:
+        //int num = 5;
+        //KvadratNum(ref num);
+        //Console.WriteLine(num);
+
+
+        // // ref:
+        //int a = 5;
+        //int b = 6;
+        //SwapNum1ToNum2(ref a, ref b);
+        //Console.WriteLine(a);
+        //Console.WriteLine(b);
+
+
+        //// // out
+        //int son;
+        //TakeNumber(out son);
+        //Console.WriteLine(son);
+
+        // ref
+        //int num = 7;
+        //GetNumber(ref num);
+        //Console.WriteLine(num);
+    }
+
+    static void GetNumber(ref int a)
+    {
+        a *= 2;
+    }
+
+    static void TakeNumber(out int num)
+    {
+        Console.Write("Son kiriting : ");
+        num = int.Parse(Console.ReadLine());
+    }
+
+
+    static void SwapNum1ToNum2(ref int num1, ref int num2)
+    {
+        var help = num1;
+        num1 = num2;
+        num2 = help;
+    }
+    static void KvadratNum(ref int num)
+    {
+        num = num * num;
+    }
+
+
+    static void DoEvenToNull(ref int a)
+    {
+        if (a % 2 == 0)
+        {
+            a = 0;
+        }
+    }
+
+    static void DoNegativeToPositive(ref int num)
+    {
+        if (num < 0)
+        {
+            num = -num;
+        }
+    }
+
+
+    static void SummAndMultNumbers(out int summ, out int mult, int num1, int num2)
+    {
+        summ = num1 + num2;
+        mult = num1 * num2;
+    }
+
+
+    static void PayFromBalance(ref int balance, int summa)
+    {
+        if (summa <= balance)
+        {
+            balance -= summa;
+        }
+
+    }
+
+    static void GetOddOrEven(out bool res, int num)
+    {
+        if (num % 2 == 0)
+        {
+            res = true;
+        }
+        else
+        {
+            res = false;
+        }
+    }
+
+
+    static void IncreseNumber(ref int num)
+    {
+        ++num;
+    }
+}

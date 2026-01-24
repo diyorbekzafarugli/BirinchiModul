@@ -1,0 +1,66 @@
+namespace Lessson_1_6_;
+
+internal class Program
+{
+    static void PrintToConsole(List<int> ints)
+    {
+        foreach (var el in ints)
+        {
+            Console.WriteLine(el);
+        }
+    }
+    static List<int> FillListWithConsoleValues(List<int> ints, int len)
+    {
+        for (int i = 0; i < len; i++)
+        {
+            Console.Write($"{i} : ");
+            ints.Add(int.Parse(Console.ReadLine()));
+        }
+
+        return ints;
+    }
+
+    static bool CompairOddAndEvenElement(List<int> nums)
+    {
+        var countOdd = 0;
+        var countEven = 0;
+
+        foreach (var item in nums)
+        {
+            if (item % 2 == 0)
+            {
+                countEven++;
+            } else
+            {
+                countOdd++;
+            }
+        }
+
+        return countEven < countOdd;
+    }
+
+
+    static void Main(string[] args)
+    {
+        Console.Write("Enter length of list : ");
+        int len = int.Parse(Console.ReadLine());
+        List<int> nums = new List<int>();
+
+
+        nums = FillListWithConsoleValues(nums, len);
+        nums = GetSwappedListFirstLast(nums);
+        //PrintToConsole(nums);
+
+
+        Console.WriteLine(CompairOddAndEvenElement(nums));
+    }
+
+    static List<int> GetSwappedListFirstLast(List<int> nums)
+    {
+        var help = nums[0];
+        nums[0] = nums[nums.Count - 1];
+        nums[nums.Count - 1] = help;
+
+        return nums;
+    }
+}
