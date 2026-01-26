@@ -1,0 +1,51 @@
+namespace Lesson_1_11_;
+
+internal class Program
+{
+
+    static void Main(string[] args)
+    {
+
+
+
+        School school1 = CreateSchool();
+        AddSchool(school1);
+
+        Console.WriteLine();
+        DisplaySchoolInfo(school1);
+
+    }
+
+    static void AddSchool(School school)
+    {
+        Console.Write("Maktab nomi : ");
+        school.SchoolName = (Console.ReadLine());
+        Console.Write("Maktab raqami : ");
+        school.SchoolNumber = int.Parse(Console.ReadLine());
+        Console.Write("Maktab joylashuvi : ");
+        school.SchoolLocation = Console.ReadLine();
+        Console.Write("Maktabdagi o'quchilar soni : ");
+        school.SchoolsPupils = int.Parse(Console.ReadLine());
+        Console.Write("Maktabning o'quvchi sig'mi : ");
+        school.SchoolsCapasity = int.Parse(Console.ReadLine());
+        Console.Write("Maktabning mavqeyi : ");
+        school.LevelOfSchool = Console.ReadLine();
+    }
+
+    static School CreateSchool()
+    {
+        return new School();
+    }
+
+
+    static void DisplaySchoolInfo(School school)
+    {
+        Console.WriteLine("Maktab nomi : ", school.SchoolName);
+        Console.WriteLine("Maktab raqami : ", school.SchoolNumber);
+        Console.WriteLine("Maktab manzili : ", school.SchoolLocation);
+        Console.WriteLine("Maktabdagi o'quvchilar soni : ", school.SchoolsPupils);
+        Console.WriteLine("Maktab o'quvchilar sig'imi ", school.SchoolsCapasity);
+        Console.WriteLine("Maktab mavqeyi ", school.LevelOfSchool);
+    }
+
+}
